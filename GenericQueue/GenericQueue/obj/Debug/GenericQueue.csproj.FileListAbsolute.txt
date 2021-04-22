@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\GenericQueue\GenericQueue\bin\Debug\GenericQueue.exe.config
+C:\Users\Max\source\repos\GenericQueue\GenericQueue\bin\Debug\GenericQueue.exe
+C:\Users\Max\source\repos\GenericQueue\GenericQueue\bin\Debug\GenericQueue.pdb
+C:\Users\Max\source\repos\GenericQueue\GenericQueue\obj\Debug\GenericQueue.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\GenericQueue\GenericQueue\obj\Debug\GenericQueue.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\GenericQueue\GenericQueue\obj\Debug\GenericQueue.exe
+C:\Users\Max\source\repos\GenericQueue\GenericQueue\obj\Debug\GenericQueue.pdb

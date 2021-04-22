@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\ADAssignment\ADAssignment\obj\Debug\ADAssignment.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\ADAssignment\ADAssignment\bin\Debug\ADAssignment.exe.config
+C:\Users\Max\source\repos\ADAssignment\ADAssignment\bin\Debug\ADAssignment.exe
+C:\Users\Max\source\repos\ADAssignment\ADAssignment\bin\Debug\ADAssignment.pdb
+C:\Users\Max\source\repos\ADAssignment\ADAssignment\obj\Debug\ADAssignment.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\ADAssignment\ADAssignment\obj\Debug\ADAssignment.exe
+C:\Users\Max\source\repos\ADAssignment\ADAssignment\obj\Debug\ADAssignment.pdb

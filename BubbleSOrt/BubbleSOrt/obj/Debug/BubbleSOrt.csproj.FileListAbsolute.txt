@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\BubbleSOrt\BubbleSOrt\bin\Debug\BubbleSOrt.exe.config
+C:\Users\Max\source\repos\BubbleSOrt\BubbleSOrt\bin\Debug\BubbleSOrt.exe
+C:\Users\Max\source\repos\BubbleSOrt\BubbleSOrt\bin\Debug\BubbleSOrt.pdb
+C:\Users\Max\source\repos\BubbleSOrt\BubbleSOrt\obj\Debug\BubbleSOrt.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\BubbleSOrt\BubbleSOrt\obj\Debug\BubbleSOrt.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\BubbleSOrt\BubbleSOrt\obj\Debug\BubbleSOrt.exe
+C:\Users\Max\source\repos\BubbleSOrt\BubbleSOrt\obj\Debug\BubbleSOrt.pdb

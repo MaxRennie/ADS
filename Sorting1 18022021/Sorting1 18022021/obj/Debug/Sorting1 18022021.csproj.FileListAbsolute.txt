@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\Sorting1 18022021\Sorting1 18022021\bin\Debug\Sorting1 18022021.exe.config
+C:\Users\Max\source\repos\Sorting1 18022021\Sorting1 18022021\bin\Debug\Sorting1 18022021.exe
+C:\Users\Max\source\repos\Sorting1 18022021\Sorting1 18022021\bin\Debug\Sorting1 18022021.pdb
+C:\Users\Max\source\repos\Sorting1 18022021\Sorting1 18022021\obj\Debug\Sorting1 18022021.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\Sorting1 18022021\Sorting1 18022021\obj\Debug\Sorting1 18022021.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\Sorting1 18022021\Sorting1 18022021\obj\Debug\Sorting1 18022021.exe
+C:\Users\Max\source\repos\Sorting1 18022021\Sorting1 18022021\obj\Debug\Sorting1 18022021.pdb

@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\BinaryHeapArr\BinaryHeapArr\bin\Debug\BinaryHeapArr.exe.config
+C:\Users\Max\source\repos\BinaryHeapArr\BinaryHeapArr\bin\Debug\BinaryHeapArr.exe
+C:\Users\Max\source\repos\BinaryHeapArr\BinaryHeapArr\bin\Debug\BinaryHeapArr.pdb
+C:\Users\Max\source\repos\BinaryHeapArr\BinaryHeapArr\obj\Debug\BinaryHeapArr.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\BinaryHeapArr\BinaryHeapArr\obj\Debug\BinaryHeapArr.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\BinaryHeapArr\BinaryHeapArr\obj\Debug\BinaryHeapArr.exe
+C:\Users\Max\source\repos\BinaryHeapArr\BinaryHeapArr\obj\Debug\BinaryHeapArr.pdb

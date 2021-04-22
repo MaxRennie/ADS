@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\GenericStack\GenericStack\bin\Debug\GenericStack.exe.config
+C:\Users\Max\source\repos\GenericStack\GenericStack\bin\Debug\GenericStack.exe
+C:\Users\Max\source\repos\GenericStack\GenericStack\bin\Debug\GenericStack.pdb
+C:\Users\Max\source\repos\GenericStack\GenericStack\obj\Debug\GenericStack.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\GenericStack\GenericStack\obj\Debug\GenericStack.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\GenericStack\GenericStack\obj\Debug\GenericStack.exe
+C:\Users\Max\source\repos\GenericStack\GenericStack\obj\Debug\GenericStack.pdb

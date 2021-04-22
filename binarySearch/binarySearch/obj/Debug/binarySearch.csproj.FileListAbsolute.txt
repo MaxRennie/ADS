@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\binarySearch\binarySearch\obj\Debug\binarySearch.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\binarySearch\binarySearch\obj\Debug\binarySearch.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\binarySearch\binarySearch\bin\Debug\binarySearch.exe.config
+C:\Users\Max\source\repos\binarySearch\binarySearch\bin\Debug\binarySearch.exe
+C:\Users\Max\source\repos\binarySearch\binarySearch\bin\Debug\binarySearch.pdb
+C:\Users\Max\source\repos\binarySearch\binarySearch\obj\Debug\binarySearch.exe
+C:\Users\Max\source\repos\binarySearch\binarySearch\obj\Debug\binarySearch.pdb

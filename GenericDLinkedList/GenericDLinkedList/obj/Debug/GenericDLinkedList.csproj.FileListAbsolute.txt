@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\GenericDLinkedList\GenericDLinkedList\obj\Debug\GenericDLinkedList.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\GenericDLinkedList\GenericDLinkedList\obj\Debug\GenericDLinkedList.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\GenericDLinkedList\GenericDLinkedList\bin\Debug\GenericDLinkedList.exe.config
+C:\Users\Max\source\repos\GenericDLinkedList\GenericDLinkedList\bin\Debug\GenericDLinkedList.exe
+C:\Users\Max\source\repos\GenericDLinkedList\GenericDLinkedList\bin\Debug\GenericDLinkedList.pdb
+C:\Users\Max\source\repos\GenericDLinkedList\GenericDLinkedList\obj\Debug\GenericDLinkedList.exe
+C:\Users\Max\source\repos\GenericDLinkedList\GenericDLinkedList\obj\Debug\GenericDLinkedList.pdb

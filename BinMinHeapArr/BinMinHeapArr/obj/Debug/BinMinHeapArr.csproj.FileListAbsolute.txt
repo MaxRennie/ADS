@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\BinMinHeapArr\BinMinHeapArr\bin\Debug\BinMinHeapArr.exe.config
+C:\Users\Max\source\repos\BinMinHeapArr\BinMinHeapArr\bin\Debug\BinMinHeapArr.exe
+C:\Users\Max\source\repos\BinMinHeapArr\BinMinHeapArr\bin\Debug\BinMinHeapArr.pdb
+C:\Users\Max\source\repos\BinMinHeapArr\BinMinHeapArr\obj\Debug\BinMinHeapArr.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\BinMinHeapArr\BinMinHeapArr\obj\Debug\BinMinHeapArr.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\BinMinHeapArr\BinMinHeapArr\obj\Debug\BinMinHeapArr.exe
+C:\Users\Max\source\repos\BinMinHeapArr\BinMinHeapArr\obj\Debug\BinMinHeapArr.pdb
