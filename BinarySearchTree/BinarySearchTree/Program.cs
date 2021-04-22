@@ -17,16 +17,31 @@ namespace BinarySearchTree
             int count = 0;
 
             Add(0, BinSearchTreeArr);
+            PrintArray(BinSearchTreeArr);
+            Console.WriteLine();
             Add(1, BinSearchTreeArr);
+            PrintArray(BinSearchTreeArr);
+            Console.WriteLine();
             Add(2, BinSearchTreeArr);
+            PrintArray(BinSearchTreeArr);
+            Console.WriteLine();
             Add(3, BinSearchTreeArr);
+            PrintArray(BinSearchTreeArr);
+            Console.WriteLine();
             Add(4, BinSearchTreeArr);
+            PrintArray(BinSearchTreeArr);
+            Console.WriteLine();
             Add(5, BinSearchTreeArr);
+            PrintArray(BinSearchTreeArr);
+            Console.WriteLine();
             Add(6, BinSearchTreeArr);
+            PrintArray(BinSearchTreeArr);
+            Console.WriteLine();
             Add(7, BinSearchTreeArr);
             PrintArray(BinSearchTreeArr);
-            Console.WriteLine(Search(12, BinSearchTreeArr, 0));
-            Console.WriteLine(Search(97, BinSearchTreeArr, 0));
+            Console.WriteLine();
+            //Console.WriteLine(Search(12, BinSearchTreeArr, 0));
+            //Console.WriteLine(Search(97, BinSearchTreeArr, 0));
             Console.ReadLine();
 
             void Add(int indexOfItemToAdd, int[] targetArr)
@@ -68,6 +83,72 @@ namespace BinarySearchTree
                         CompareAndPlace(FindIndexOfRightChild(indexToCompare, targetArr), itemToAdd, targetArr);
                     }
                 }
+                int FindIndexOfLeftChild(int IndexOfCurrentNode, int[] targetArrAdd)
+                {
+                    int IndexOfLeftChild = 2 * IndexOfCurrentNode + 1;
+                    if (IndexOfLeftChild < targetArrAdd.Length - 1)
+                    {
+                        return IndexOfLeftChild;
+                    }
+                    if (IndexOfLeftChild > targetArrAdd.Length - 1)
+                    {
+                        targetArrAdd = IncreaseArrSize(targetArrAdd);
+                        FindIndexOfLeftChild(IndexOfCurrentNode, targetArrAdd);
+                    }
+                    return default;
+                }
+
+                int FindValueOfLeftChild(int IndexOfCurrentNode, int[] targetArrAdd)
+                {
+                    int IndexOfLeftChild = 2 * IndexOfCurrentNode + 1;
+                    if (IndexOfLeftChild < targetArrAdd.Length - 1)
+                    {
+                        return targetArrAdd[IndexOfLeftChild];
+                    }
+                    if (IndexOfLeftChild > targetArrAdd.Length - 1)
+                    {
+                        targetArrAdd = IncreaseArrSize(targetArrAdd);
+                        FindValueOfLeftChild(IndexOfCurrentNode, targetArrAdd);
+                    }
+                    return default;
+                }
+
+                int FindIndexOfRightChild(int IndexOfCurrentNode, int[] targetArrAdd)
+                {
+                    int IndexOfRightChild = 2 * IndexOfCurrentNode + 2;
+                    if (IndexOfRightChild < targetArrAdd.Length - 1)
+                    {
+                        return IndexOfRightChild;
+                    }
+                    if (IndexOfRightChild > targetArrAdd.Length - 1)
+                    {
+                        targetArrAdd = IncreaseArrSize(targetArrAdd);
+                        FindIndexOfRightChild(IndexOfCurrentNode, targetArrAdd);
+                    }
+                    return default;
+                }
+
+                int FindValueOfRightChild(int IndexOfCurrentNode, int[] targetArrAdd)
+                {
+                    int IndexOfRightChild = 2 * IndexOfCurrentNode + 2;
+                    if (IndexOfRightChild < targetArrAdd.Length - 1)
+                    {
+                        return targetArrAdd[IndexOfRightChild];
+                    }
+                    if (IndexOfRightChild > targetArr.Length - 1)
+                    {
+                        targetArrAdd = IncreaseArrSize(targetArrAdd);
+                        FindValueOfRightChild(IndexOfCurrentNode, targetArrAdd);
+                    }
+                    return default;
+                }
+
+                int[] IncreaseArrSize(int[] arr)
+                {
+                    int[] arr2 = new int[arr.Length + 10];
+                    Array.Copy(arr, arr2, arr.Length);
+                    return arr2;
+                }
             }
 
             bool Search(int searchItem, int[] targetArr, int startPoint)
@@ -87,74 +168,28 @@ namespace BinarySearchTree
                     result = Search(searchItem, targetArr, FindIndexOfLeftChild(startPoint, targetArr));
                 }
                 return result;
-            }
 
-            int FindIndexOfLeftChild(int IndexOfCurrentNode, int[] targetArr)
-            {
-                int IndexOfLeftChild = 2 * IndexOfCurrentNode + 1;
-                if (IndexOfLeftChild < targetArr.Length-1)
+                int FindIndexOfLeftChild(int IndexOfCurrentNode, int[] targetArrSearch)
                 {
-                    return IndexOfLeftChild;
+                    int IndexOfLeftChild = 2 * IndexOfCurrentNode + 1;
+                    if (IndexOfLeftChild < targetArr.Length - 1)
+                    {
+                        return IndexOfLeftChild;
+                    }
+                    else
+                    return default;
                 }
-                if (IndexOfLeftChild > targetArr.Length-1)
-                {
-                    IncreaseArrSize(targetArr);
-                    FindIndexOfLeftChild(IndexOfCurrentNode, targetArr);
-                }
-                return default;
-            }
 
-            int FindValueOfLeftChild(int IndexOfCurrentNode, int[] targetArr)
-            {
-                int IndexOfLeftChild = 2 * IndexOfCurrentNode + 1;
-                if (IndexOfLeftChild < targetArr.Length - 1)
+                int FindIndexOfRightChild(int IndexOfCurrentNode, int[] targetArrSearch)
                 {
-                    return targetArr[IndexOfLeftChild];
+                    int IndexOfRightChild = 2 * IndexOfCurrentNode + 2;
+                    if (IndexOfRightChild < targetArr.Length - 1)
+                    {
+                        return IndexOfRightChild;
+                    }
+                    else
+                        return default;
                 }
-                if (IndexOfLeftChild > targetArr.Length - 1)
-                {
-                    IncreaseArrSize(targetArr);
-                    FindIndexOfLeftChild(IndexOfCurrentNode, targetArr);
-                }
-                return default;
-            }
-
-            int FindIndexOfRightChild(int IndexOfCurrentNode, int[] targetArr)
-            {
-                int IndexOfRightChild = 2 * IndexOfCurrentNode + 2;
-                if (IndexOfRightChild < targetArr.Length - 1)
-                {
-                    return IndexOfRightChild;
-                }
-                if (IndexOfRightChild > targetArr.Length - 1)
-                {
-                    IncreaseArrSize(targetArr);
-                    FindIndexOfRightChild(IndexOfCurrentNode, targetArr);
-                }
-                return default;
-            }
-
-            int FindValueOfRightChild(int IndexOfCurrentNode, int[] targetArr)
-            {
-                int IndexOfRightChild = 2 * IndexOfCurrentNode + 2;
-                if (IndexOfRightChild < targetArr.Length - 1)
-                {
-                    return targetArr[IndexOfRightChild];
-                }
-                if (IndexOfRightChild > targetArr.Length - 1)
-                {
-                    IncreaseArrSize(targetArr);
-                    FindIndexOfRightChild(IndexOfCurrentNode, targetArr);
-                }
-                return default;
-            }
-
-            int[] IncreaseArrSize(int[] arr)
-            {
-
-                int[] arr2 = new int[arr.Length + 10];
-                Array.Copy(arr, arr2, arr.Length);
-                return arr2;
             }
 
             void PrintArray(int[] source)

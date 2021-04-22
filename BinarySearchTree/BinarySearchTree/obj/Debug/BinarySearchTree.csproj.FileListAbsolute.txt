@@ -5,3 +5,10 @@ C:\Users\Max\source\repos\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySear
 C:\Users\Max\source\repos\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.pdb
 C:\Users\Max\source\repos\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.exe
 C:\Users\Max\source\repos\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.pdb
+C:\Users\Max\source\repos\ADS\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe.config
+C:\Users\Max\source\repos\ADS\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe
+C:\Users\Max\source\repos\ADS\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.pdb
+C:\Users\Max\source\repos\ADS\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\ADS\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\ADS\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.exe
+C:\Users\Max\source\repos\ADS\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.pdb

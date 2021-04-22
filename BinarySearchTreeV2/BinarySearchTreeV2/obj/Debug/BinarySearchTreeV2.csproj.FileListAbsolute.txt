@@ -1,0 +1,7 @@
+C:\Users\Max\source\repos\ADS\BinarySearchTreeV2\BinarySearchTreeV2\obj\Debug\BinarySearchTreeV2.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\ADS\BinarySearchTreeV2\BinarySearchTreeV2\obj\Debug\BinarySearchTreeV2.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\ADS\BinarySearchTreeV2\BinarySearchTreeV2\bin\Debug\BinarySearchTreeV2.exe.config
+C:\Users\Max\source\repos\ADS\BinarySearchTreeV2\BinarySearchTreeV2\bin\Debug\BinarySearchTreeV2.exe
+C:\Users\Max\source\repos\ADS\BinarySearchTreeV2\BinarySearchTreeV2\bin\Debug\BinarySearchTreeV2.pdb
+C:\Users\Max\source\repos\ADS\BinarySearchTreeV2\BinarySearchTreeV2\obj\Debug\BinarySearchTreeV2.exe
+C:\Users\Max\source\repos\ADS\BinarySearchTreeV2\BinarySearchTreeV2\obj\Debug\BinarySearchTreeV2.pdb
