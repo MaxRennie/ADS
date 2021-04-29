@@ -149,14 +149,16 @@ namespace GenericDLinkedList
                 }
                 if (NodeToMoveUp != Head && NodeToMoveUp != Head.NextNodeRef)
                 {
-                    Node<T> ParentNode = NodeToMoveUp.PrevNodeRef;
-                    Node<T> ChildOfNode = NodeToMoveUp.NextNodeRef;
-                    Node<T> ParentOfParentNode = ParentNode.PrevNodeRef;
+                    //in {0, 1, 2, 3, 4} move Up index 2 so that {0, 2, 1, 3, 4}
 
-                    ParentOfParentNode.NextNodeRef = NodeToMoveUp;
-                    NodeToMoveUp.NextNodeRef = ParentNode;
-                    NodeToMoveUp.PrevNodeRef = ParentOfParentNode;
-                    ParentNode.NextNodeRef = ChildOfNode;
+                    Node<T> ParentNode = NodeToMoveUp.PrevNodeRef; //assigning 1 to parent node
+                    Node<T> ChildOfNode = NodeToMoveUp.NextNodeRef; // assigning 3 to child node
+                    Node<T> ParentOfParentNode = ParentNode.PrevNodeRef; // assigning 0 to parent of parent
+
+                    NodeToMoveUp.PrevNodeRef = ParentOfParentNode;//Old parent of parent (0) is now the parent of node to move up(2)      0 is now parent of 2 
+                    ParentOfParentNode.NextNodeRef = NodeToMoveUp; //nodetomoveup(2) is now the child of parentof parent(0)               2 now child of 0
+                    NodeToMoveUp.NextNodeRef = ParentNode;//Old parent Node(1) is now the next node/child of the node to move up(2)       1 is now child of 2
+                    ParentNode.NextNodeRef = ChildOfNode;//old parent(1) is now the pareent of Child node(3)                              1 is now parent of 3
                 }
             }
             public void MoveDown(int index)
