@@ -14,33 +14,23 @@ namespace BinarySearchTreeV2
         {
             BinarySearchTree<int> BinSearchTree = new BinarySearchTree<int>();
             BinSearchTree.Add(64);
-            Console.WriteLine();
             BinSearchTree.Add(2);
-            Console.WriteLine();
             BinSearchTree.Add(9);
-            Console.WriteLine();
             BinSearchTree.Add(87);
-            Console.WriteLine();
             BinSearchTree.Add(23);
-            Console.WriteLine();
             BinSearchTree.Add(44);
-            Console.WriteLine();
             BinSearchTree.Add(99);
-            Console.WriteLine();
             BinSearchTree.Add(12);
-            Console.WriteLine();
             Console.WriteLine(BinSearchTree.Search(12));
             Console.WriteLine(BinSearchTree.Search(97));
-            Console.ReadLine();
-
         }
 
         public class BinarySearchTree<T> where T : IComparable
         {
-            Node<T> Root;
+            NodeBST<T> Root;
             public void Add(T itemToAdd)
             {
-                Node<T> NewNode = new Node<T>();
+                NodeBST<T> NewNode = new NodeBST<T>();
                 NewNode.Data = itemToAdd;
 
                 if (Root == null)
@@ -52,7 +42,7 @@ namespace BinarySearchTreeV2
                     CompareAndPlace(Root, NewNode);
                 }
             }
-            public void CompareAndPlace(Node<T> NodeToCompareTo, Node<T> NodeToPlace)
+            public void CompareAndPlace(NodeBST<T> NodeToCompareTo, NodeBST<T> NodeToPlace)
             {
                 if (NodeToPlace.Data.CompareTo(NodeToCompareTo.Data) >=0)
                 {
@@ -81,7 +71,7 @@ namespace BinarySearchTreeV2
                 bool result = SearchWithNode(itemToFind, Root);
                 return result;
             }
-            public bool SearchWithNode(int ItemToFind, Node<T> NodeToCompare)
+            public bool SearchWithNode(int ItemToFind, NodeBST<T> NodeToCompare)
             {
                 while (NodeToCompare != null)
                 {
@@ -102,11 +92,11 @@ namespace BinarySearchTreeV2
             }
         }
 
-        public class Node<T> where T: IComparable
+        public class NodeBST<T> where T: IComparable
         {
             public T Data;
-            public Node<T> LeftChildRef;
-            public Node<T> RightChildRef;
+            public NodeBST<T> LeftChildRef;
+            public NodeBST<T> RightChildRef;
         }
 
     }

@@ -25,6 +25,7 @@ namespace ADAssignment
 
             Console.WriteLine("---QUICK SORT---");
             quickSort();
+            Console.WriteLine();
             Console.ReadLine();
 
             Console.WriteLine("---BUBBLE SORT---");
@@ -39,24 +40,44 @@ namespace ADAssignment
             radixSort();
             Console.ReadLine();
 
+            Console.WriteLine("---TRAVELLING SALESMAN---");
+            Graph myGraph = new Graph();
+            Console.WriteLine("Shortest route from a random index via nearest neighbor method");
+            myGraph.TS(); 
+            Console.WriteLine();
+            myGraph.TS();
+            Console.WriteLine();
+            myGraph.TS();
+            Console.WriteLine();
+            myGraph.TS();
+            Console.ReadLine();
+
             Console.WriteLine("---BINARY SEARCH---");
             BinarySearch();
+            Console.ReadLine();
+
+            Console.WriteLine("---BINARY (MINIMUM) HEAP---");
+            MinHeap();
+            Console.ReadLine();
+
+            Console.WriteLine("---BINARY SEARCH TREE---");
+            BinSearchTree();
             Console.ReadLine();
         }
 
 
         static void genericStack()
-        { 
-        Stack <string> stringStack = new Stack <string> ();
-        Stack <int> integerStack = new Stack <int>();
+        {
+            Stack<string> stringStack = new Stack<string>();
+            Stack<int> integerStack = new Stack<int>();
 
-            Console.WriteLine("--Enqueue strings and print--");
+            Console.WriteLine("--Enqueue strings to stack and print--");
             stringStack.EnqueuePush("Learn C# in 24 hours");
             stringStack.EnqueuePush("Yellow Duck book");
             stringStack.EnqueuePush("The Anti-aging Cookbook");
             stringStack.EnqueuePush("Simple Stargazing");
             stringStack.EnqueuePush("Mexican Cooking");
-               
+
             stringStack.Print();
             Console.WriteLine();
             //Console.ReadLine();
@@ -82,7 +103,6 @@ namespace ADAssignment
             // Console.ReadLine();
 
             integerStack.Print();
-            Console.ReadLine();
         }
         static void genericQueue()
         {
@@ -130,10 +150,8 @@ namespace ADAssignment
             StringSList.Add("iPhone 6");
             StringSList.Add("iPhone X");
             StringSList.Add("Huawei Psmart 2019");
-
             StringSList.Print();
             Console.WriteLine();
-
 
             Console.WriteLine("--Remove last and iPhone X--");
             StringSList.Remove("iPhone X");
@@ -141,32 +159,24 @@ namespace ADAssignment
             StringSList.Print();
             Console.WriteLine();
 
-
             Console.WriteLine("--Add Huawei Psmart 2019 and iPhone X--");
             StringSList.Add("iPhone X");
             StringSList.Add("Huawei Psmart 2019");
             StringSList.Print();
             Console.WriteLine();
 
-
             Console.WriteLine("--Insert Samsung Galaxy into index 2--");
             StringSList.insert("Samsung Galaxy", 2);
-
             StringSList.Print();
             Console.WriteLine();
 
-
-            Console.WriteLine("--Move item in index 3 Up--"); 
+            Console.WriteLine("--Move item in index 3 Up--");
             StringSList.MoveUp(3);
-
             StringSList.Print();
             Console.WriteLine();
-
 
             Console.WriteLine("--Move iPhone X Down--");
             StringSList.MoveDown(2);
-
-
             StringSList.Print();
             Console.WriteLine();
 
@@ -211,7 +221,7 @@ namespace ADAssignment
             Console.WriteLine("--Move item in index 2 down one space--");
             StringDList.MoveDown(2);
             StringDList.Print();
-            Console.ReadLine();
+
         }
         private static void quickSort()
         {
@@ -220,8 +230,7 @@ namespace ADAssignment
             Console.WriteLine();
             QuickSortArray(values);
             PrintArray(values);
-            Console.WriteLine();
-            Console.ReadLine();
+
         }
         private static void bubbleSort()
         {
@@ -231,7 +240,6 @@ namespace ADAssignment
             bubbleSortArray(values);
             PrintArray(values);
             Console.WriteLine();
-            Console.ReadLine();
 
         }
         static void insertionSortArray()
@@ -243,7 +251,7 @@ namespace ADAssignment
 
             PrintArray(insertionSort(values));
             Console.WriteLine();
-            Console.ReadLine();
+
         }
         static void radixSort()
         {
@@ -252,9 +260,276 @@ namespace ADAssignment
             Console.WriteLine();
             PrintRadixSortedArray(RadixSort(values));
             Console.WriteLine();
-            Console.ReadLine();
+
         }
-        class Stack<T>
+        class Graph
+        {
+
+            List<List<Edge>> WeightedGraph = new List<List<Edge>>();
+
+            public Graph()
+            {
+                int NumberOfNodes = 5;
+                WeightedGraph = new List<List<Edge>>(5);
+
+                for (int i = 0; i < NumberOfNodes; i++)
+                {
+                    WeightedGraph.Add(new List<Edge>());
+                }
+
+
+                WeightedGraph[0].Add(new Edge(1, 98));
+                WeightedGraph[0].Add(new Edge(2, 218));
+                WeightedGraph[0].Add(new Edge(3, 97));
+                WeightedGraph[0].Add(new Edge(4, 94));
+
+                WeightedGraph[1].Add(new Edge(0, 98));
+                WeightedGraph[1].Add(new Edge(2, 150));
+                WeightedGraph[1].Add(new Edge(3, 164));
+                WeightedGraph[1].Add(new Edge(4, 193));
+
+                WeightedGraph[2].Add(new Edge(0, 218));
+                WeightedGraph[2].Add(new Edge(1, 150));
+                WeightedGraph[2].Add(new Edge(3, 218));
+                WeightedGraph[2].Add(new Edge(4, 298));
+
+                WeightedGraph[3].Add(new Edge(0, 97));
+                WeightedGraph[3].Add(new Edge(1, 164));
+                WeightedGraph[3].Add(new Edge(2, 218));
+                WeightedGraph[3].Add(new Edge(4, 102));
+
+                WeightedGraph[4].Add(new Edge(0, 94));
+                WeightedGraph[4].Add(new Edge(1, 193));
+                WeightedGraph[4].Add(new Edge(2, 298));
+                WeightedGraph[4].Add(new Edge(3, 102));
+
+            }
+            public void TS()
+            {
+                List<Edge> ShortestRoute = new List<Edge>();
+
+                Random r = new Random();
+                int index = r.Next(0, 5);
+
+                List<int> visited = new List<int>();
+
+                for (int i = 0; i < WeightedGraph.Count; i++)
+                {
+                    List<Edge> Node = WeightedGraph[index];
+
+                    Edge ShortestEdge = Node[0];
+
+
+                    if (visited.Count == WeightedGraph.Count - 1)
+                        break;
+
+                    //find a node we havnt visited
+                    while (visited.Contains(ShortestEdge.NodeToConnectTo))
+                    {
+                        if (Node.IndexOf(ShortestEdge) + 1 >= Node.Count)
+                            continue;
+
+                        ShortestEdge = Node[Node.IndexOf(ShortestEdge) + 1];
+                    }
+
+                    foreach (Edge edge in Node)
+                    {
+                        //if (!Visited.Contains( edge.NodeToConnectTo))
+                        //{
+
+                        //}
+                        if (edge.Weight < ShortestEdge.Weight && !visited.Contains(edge.NodeToConnectTo))
+                            ShortestEdge = edge;
+                    }
+
+                    ShortestRoute.Add(ShortestEdge);
+                    visited.Add(index);
+                    index = ShortestEdge.NodeToConnectTo;
+                }
+
+                visited.Add(index);
+                //ShortestRoute.Add();
+
+                foreach (int i in visited)
+                {
+                    Console.WriteLine(i);
+                }
+
+                //PrintList(ShortestRoute);
+            }
+
+            public void PrintList(List<Edge> edges)
+            {
+
+                for (int i = 0; i < edges.Count; i++)
+                {
+                    Console.WriteLine(edges[i].NodeToConnectTo);
+                    Console.WriteLine();
+                }
+
+            }
+            public struct Edge
+            {
+                public int NodeToConnectTo;
+                public int Weight;
+                public Edge(int _NodeToConnectTo, int _Weight)
+                {
+                    Weight = _Weight;
+                    NodeToConnectTo = _NodeToConnectTo;
+                }
+            }
+        } //Travelling Salesman
+        static void BinarySearch()
+        {
+            List<int> Data = new List<int>();
+            Data.Add(54);
+            Data.Add(58);
+            Data.Add(69);
+            Data.Add(72);
+            Data.Add(35);
+            Data.Add(4);
+            Data.Add(16);
+            Data.Add(95);
+
+            Data.ForEach(Console.WriteLine);
+
+            Console.WriteLine("Is 16 in the list? " + search(Data, 16));
+            Console.WriteLine("Is 643 in the list? " + search(Data, 643));
+        }
+        private static void MinHeap()
+        {
+            int[] values = new int[] { 1, 7, 8, 4, 9, 3, 10 };
+            int[] BinMinHeapArr = new int[values.Length];
+            int count = 0;
+
+            Console.WriteLine("7 values added");
+            Add(0, BinMinHeapArr);
+            Add(1, BinMinHeapArr);
+            Add(2, BinMinHeapArr);
+            Add(3, BinMinHeapArr);
+            Add(4, BinMinHeapArr);
+            Add(5, BinMinHeapArr);
+            Add(6, BinMinHeapArr);
+            PrintArray(BinMinHeapArr);
+            Console.WriteLine();
+            Console.WriteLine("top value removed and rest of heap is bubbled up");
+            Remove(BinMinHeapArr);
+            PrintArray(BinMinHeapArr);
+
+
+            void Add(int indexOfItemToAdd, int[] targetArr)
+            {
+                int itemToAdd = values[indexOfItemToAdd];
+                targetArr[count] = itemToAdd;
+
+                if (count != 0 && targetArr[count] < targetArr[FindIndexOfParentNode(count)])
+                    SwapValues(targetArr, count, FindIndexOfParentNode(count));
+
+                count++;
+            }
+
+            void Remove(int[] targetArr)
+            {
+                targetArr[0] = default;
+                BubbleUp(targetArr);
+            }
+
+            void BubbleUp(int[] targetArr)
+            {
+                for (int i = 0; i < targetArr.Length - 1; i++)
+                {
+                    int LeftChildIndex = FindIndexOfLeftChildOfNode(i, targetArr);
+                    int rightChildIndex = FindIndexOfRightChildOfNode(i, targetArr);
+                    if (targetArr[i] == default)
+                    {
+                        //if left child <=right child, and left+ right children are not 0
+                        if (targetArr[LeftChildIndex] <= targetArr[rightChildIndex] && rightChildIndex != default && LeftChildIndex != default)
+                        {
+                            //swap left child and targetArr[i] 
+                            SwapValues(targetArr, i, LeftChildIndex);
+                        }
+                        //else if right child < left child, and left+ right children are not 0
+                        else if (targetArr[rightChildIndex] < targetArr[LeftChildIndex] && rightChildIndex != 0 && LeftChildIndex != 0)
+                        {
+                            //swap right child and targetArr[i] 
+                            SwapValues(targetArr, i, rightChildIndex);
+                        }
+                    }
+                    if (targetArr[rightChildIndex] > targetArr[LeftChildIndex])
+                    {
+                        SwapValues(targetArr, rightChildIndex, LeftChildIndex);
+                    }
+                }
+            }
+
+            void SwapValues(int[] source, int index1, int index2)
+            {
+                //reference -- https://stackoverflow.com/questions/43759043/how-can-i-swap-two-values-of-an-array-in-c
+                int temp;
+                temp = source[index1];
+                source[index1] = source[index2];
+                source[index2] = temp;
+            }
+
+            int FindIndexOfParentNode(int IndexOfCurrentNode)
+            {
+                int IndexOfParentNode = (int)Math.Floor((IndexOfCurrentNode - 1.0) / 2);
+                return IndexOfParentNode;
+            }
+
+            int FindIndexOfLeftChildOfNode(int IndexOfCurrentNode, int[] targetArr)
+            {
+                int IndexOfLeftChild = 2 * IndexOfCurrentNode + 2;
+                if (IndexOfLeftChild < targetArr.Length)
+                {
+                    return 2 * IndexOfCurrentNode + 1;
+                }
+                else
+                    return default;
+            }
+
+            int FindIndexOfRightChildOfNode(int IndexOfCurrentNode, int[] targetArr)
+            {
+                int IndexOfRightChild = 2 * IndexOfCurrentNode + 2;
+                if (IndexOfRightChild < targetArr.Length)
+                {
+                    return 2 * IndexOfCurrentNode + 2;
+                }
+                else
+                    return default;
+            }
+            void PrintArray(int[] source)
+            {
+
+                foreach (int i in source)
+                {
+                    if (i != default)
+                    {
+                        Console.WriteLine(i + ", ");
+                    }
+
+                }
+            }
+
+        }
+        public static void BinSearchTree()
+        {
+            Console.WriteLine("values added to tree");
+            BinarySearchTree<int> BinSearchTree = new BinarySearchTree<int>();
+            BinSearchTree.Add(64);
+            BinSearchTree.Add(2);
+            BinSearchTree.Add(9);
+            BinSearchTree.Add(87);
+            BinSearchTree.Add(23);
+            BinSearchTree.Add(44);
+            BinSearchTree.Add(99);
+            BinSearchTree.Add(12);
+            int searchValue = 12;
+            Console.WriteLine(searchValue + " is in tree: " + BinSearchTree.Search(searchValue));
+            searchValue = 97;
+            Console.WriteLine(searchValue + " is in tree: " + BinSearchTree.Search(searchValue));
+        }
+        public class Stack<T>
         {
             private int TopElement = 0;
             public T[] stackPile = new T[10];
@@ -295,18 +570,18 @@ namespace ADAssignment
 
             public void Print()
             {
-                int i= 0;
+                int i = 0;
                 foreach (T stackItem in stackPile)
                 {
                     if (i < TopElement && stackItem != null)
                     {
                         Console.WriteLine(stackItem);
                     }
-                    i++;   
+                    i++;
                 }
             }
         }
-        class Queue<T>
+        public class Queue<T>
         {
             public int TopCount = 0;
             public int BottomCount = 0;
@@ -694,7 +969,7 @@ namespace ADAssignment
                     Node<T> ParentNode = NodeToMoveUp.PrevNodeRef;
                     Node<T> ChildOfNode = NodeToMoveUp.NextNodeRef;
                     Node<T> ParentOfParentNode = ParentNode.PrevNodeRef;
-                    
+
                     ParentOfParentNode.NextNodeRef = NodeToMoveUp;
                     NodeToMoveUp.NextNodeRef = ParentNode;
                     NodeToMoveUp.PrevNodeRef = ParentOfParentNode;
@@ -810,6 +1085,73 @@ namespace ADAssignment
                 public Node<T> PrevNodeRef;
                 public T Data;
                 public Node<T> NextNodeRef; //nextnoderef references another node "somewhere" in the memory
+            }
+        }
+        public class BinarySearchTree<T> where T : IComparable
+        {
+            NodeBST<T> Root;
+            public void Add(T itemToAdd)
+            {
+                NodeBST<T> NewNode = new NodeBST<T>();
+                NewNode.Data = itemToAdd;
+
+                if (Root == null)
+                {
+                    Root = NewNode;
+                }
+                else
+                {
+                    CompareAndPlace(Root, NewNode);
+                }
+            }
+            public void CompareAndPlace(NodeBST<T> NodeToCompareTo, NodeBST<T> NodeToPlace)
+            {
+                if (NodeToPlace.Data.CompareTo(NodeToCompareTo.Data) >= 0)
+                {
+                    if (NodeToCompareTo.LeftChildRef == null)
+                    {
+                        NodeToCompareTo.LeftChildRef = NodeToPlace;
+                    }
+                    else
+                    {
+                        CompareAndPlace(NodeToCompareTo.LeftChildRef, NodeToPlace);
+                    }
+                }
+                if (NodeToPlace.Data.CompareTo(NodeToCompareTo.Data) <= 0)
+                {
+                    if (NodeToCompareTo.RightChildRef == null)
+                    {
+                        NodeToCompareTo.RightChildRef = NodeToPlace;
+                    }
+                    else
+                    {
+                        CompareAndPlace(NodeToCompareTo.RightChildRef, NodeToPlace);
+                    }
+                }
+            }
+            public bool Search(int itemToFind)
+            {
+                bool result = SearchWithNode(itemToFind, Root);
+                return result;
+            }
+            public bool SearchWithNode(int ItemToFind, NodeBST<T> NodeToCompare)
+            {
+                while (NodeToCompare != null)
+                {
+                    if (ItemToFind.CompareTo(NodeToCompare.Data) > 0)
+                    {
+                        NodeToCompare = NodeToCompare.LeftChildRef;
+                    }
+                    else if (ItemToFind.CompareTo(NodeToCompare.Data) < 0)
+                    {
+                        NodeToCompare = NodeToCompare.RightChildRef;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                return false;
             }
         }
         public static void PrintArray(int[] source)
@@ -929,24 +1271,7 @@ namespace ADAssignment
                 Console.Write(i.ToString() + ", ");
             }
         }
-        static void BinarySearch()
-        {
-            List<int> Data = new List<int>();
-            Data.Add(54);
-            Data.Add(58);
-            Data.Add(69);
-            Data.Add(72);
-            Data.Add(35);
-            Data.Add(4);
-            Data.Add(16);
-            Data.Add(95);
 
-            Data.ForEach(Console.WriteLine);
-
-            Console.WriteLine("Is 16 in the list? " + search(Data, 16));
-            Console.WriteLine("Is 643 in the list? " + search(Data, 643));
-            Console.ReadLine();
-        }
         static bool search(List<int> data, int searchItem)
         {
             bool result = false;
@@ -977,7 +1302,14 @@ namespace ADAssignment
             }
             return result;
         }
-        class Node<T>
+
+        public class NodeBST<T> where T : IComparable
+        {
+            public T Data;
+            public NodeBST<T> LeftChildRef;
+            public NodeBST<T> RightChildRef;
+        }
+        public class Node<T>
         {
             public Node<T> stackNode;
             public T Data;

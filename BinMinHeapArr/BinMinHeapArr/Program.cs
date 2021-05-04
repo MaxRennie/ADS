@@ -60,8 +60,6 @@ namespace BinMinHeapArr
                         {
                             //swap left child and targetArr[i] 
                             SwapValues(targetArr, i, LeftChildIndex);
-                            Console.WriteLine();
-                            Console.WriteLine(targetArr[i] + targetArr[LeftChildIndex]);
                         }
                         //else if right child < left child, and left+ right children are not 0
                         else if (targetArr[rightChildIndex] < targetArr[LeftChildIndex] && rightChildIndex != 0 && LeftChildIndex != 0)
@@ -74,8 +72,6 @@ namespace BinMinHeapArr
                     {
                         SwapValues(targetArr, rightChildIndex, LeftChildIndex);
                     }
-                    PrintArray(targetArr);
-                    Console.WriteLine();
                 }
             }
 

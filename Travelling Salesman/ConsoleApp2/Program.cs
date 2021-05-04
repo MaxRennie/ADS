@@ -8,8 +8,7 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             Graph myGraph = new Graph();
-            //Console.WriteLine(myGraph.Move(2).Weight);
-            //Console.ReadLine();
+
             myGraph.TS();
 
             Console.ReadLine();
@@ -62,7 +61,8 @@ namespace ConsoleApp2
             {
                 List<Edge> ShortestRoute = new List<Edge>();
 
-                int index = 0;
+                Random r = new Random();
+                int index = r.Next(0,5);
 
                 List<int> visited = new List<int>();
 
@@ -111,138 +111,6 @@ namespace ConsoleApp2
                 //PrintList(ShortestRoute);
             }
 
-            //public void TS()
-            //{
-            //    List<Edge> ShortestRoute = new List<Edge>();
-            //    List<int> Visited = new List<int>();
-            //    int Index = 0;
-
-            //    for (int i = 0; i < WeightedGraph.Count; i++)
-            //    {
-            //        List<Edge> Node = WeightedGraph[Index];
-            //        Edge ShortestEdge = Node[0];
-
-
-            //        foreach (Edge edge in Node)
-            //        {
-            //            if (!Visited.Contains(edge.NodeToConnectTo))
-            //            {
-
-            //            }
-            //            if (edge.Weight < ShortestEdge.Weight)
-            //                ShortestEdge = edge;
-            //        }
-
-            //        ShortestRoute.Add(ShortestEdge);
-            //        foreach (var Node in WeightedGraph)
-            //        {
-            //            for (int i = 0; i < Node; i++)
-            //            {
-
-            //            }
-            //        }
-            //        Node.Remove(ShortestEdge);
-            //    }
-
-
-
-
-
-
-
-
-            //for (int i = 0; i < WeightedGraph.Count; i++)
-            //{
-            //    List<Edge> Node = new List<Edge>(WeightedGraph[Index]);
-
-            //    WeightedGraph[Index] = null;
-
-            //    Edge Shortest = Node[0];
-            //    foreach (Edge edge in Node)
-            //    {
-            //        if(WeightedGraph[edge.NodeToConnectTo] != null)
-            //        {
-            //            if (edge.Weight < Shortest.Weight)
-            //                Shortest = edge;
-            //        }
-            //        else if (WeightedGraph[Shortest.NodeToConnectTo] == null)
-            //        {
-            //            //bug!!
-            //            int NextEdgeIndex = Node.IndexOf(Shortest) + 1;
-            //            if (NextEdgeIndex < Node.Count)
-            //            {
-            //                Shortest = Node[NextEdgeIndex];
-            //            }
-            //        }
-            //    }
-            //ShortestRoute.Add(Shortest);
-            //    Index = Shortest.NodeToConnectTo;
-            //}
-
-
-
-            //List<int> VisitedNodes = new List<int>();
-            //List<Edge> ShortestRoute = new List<Edge>();
-
-            //    for (int i = 0; VisitedNodes.Count < WeightedGraph.Count; i++)
-            //    {
-            //        int j = i % 5;
-            //        ShortestRoute.Add(Move(j, VisitedNodes));
-
-            //    }
-
-            //    PrintList(ShortestRoute);
-            //}
-            //public Edge Move(int index, List<int> visitedNodes)
-            //{
-            //    Edge EdgeTo  = WeightedGraph[index][0];
-            //    for (int i = 0; i < WeightedGraph[index].Count; i++) //establishes base shortestedge
-            //    {
-            //        if (!visitedNodes.Contains(WeightedGraph[index][i].NodeToConnectTo))
-            //        {
-            //            ShortestEdge = WeightedGraph[index][i];
-            //            break;
-            //        }
-            //        else
-            //        {
-            //            continue;
-            //        }
-            //    }
-            //    for (int i = 0; i < WeightedGraph[index].Count; i++)
-            //    {
-            //        if(WeightedGraph[index][i].Weight < ShortestEdge.Weight)
-            //        {
-            //            ShortestEdge = WeightedGraph[index][i];
-            //        }
-            //    }
-            //    visitedNodes.Add(index);
-            //    return ShortestEdge;
-            //Edge DefaultEdge = (new Edge(0, 0));
-            //Edge ShortestEdge = DefaultEdge;
-            //if (index != WeightedGraph.Count - 1) //if index is less than index of weightedgraph
-
-            //    for (int i = 0; i < WeightedGraph[index].Count; i++)
-            //    {
-            //        if (!visitedNodes.Contains(WeightedGraph[index][i].NodeToConnectTo))
-            //        {
-            //            if (ShortestEdge.Weight == 0)
-            //            {
-            //                ShortestEdge = WeightedGraph[index][i];
-            //            }
-            //            if (WeightedGraph[index][i].Weight < ShortestEdge.Weight)
-            //            {//if the weight is less than the shortest weight AND the node has not been visited
-            //                ShortestEdge = WeightedGraph[index][i];
-            //                visitedNodes.Add(index);
-            //            }
-            //        }
-            //        else
-            //        {
-            //            continue;
-            //        }
-
-            //    }
-            //return ShortestEdge;
-            //}
             public void PrintList(List<Edge> edges)
             {
 
