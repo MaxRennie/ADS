@@ -25,12 +25,13 @@ namespace ConsoleApp2
                 int NumberOfNodes = 5;
                 WeightedGraph = new List<List<Edge>>(5);
 
+                //creates nodes within graph
                 for (int i = 0; i < NumberOfNodes; i++)
                 {
                     WeightedGraph.Add(new List<Edge>());
                 }
 
-
+                //creates edges
                 WeightedGraph[0].Add(new Edge(1, 98));
                 WeightedGraph[0].Add(new Edge(2, 218));
                 WeightedGraph[0].Add(new Edge(3, 97));
@@ -108,7 +109,7 @@ namespace ConsoleApp2
                     Console.WriteLine(i);
                 }
 
-                //PrintList(ShortestRoute);
+                PrintList(ShortestRoute);
             }
 
             public void PrintList(List<Edge> edges)

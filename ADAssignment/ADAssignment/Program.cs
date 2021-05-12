@@ -43,7 +43,7 @@ namespace ADAssignment
             Console.WriteLine("---TRAVELLING SALESMAN---");
             Graph myGraph = new Graph();
             Console.WriteLine("Shortest route from a random index via nearest neighbor method");
-            myGraph.TS(); 
+            myGraph.TS();
             Console.WriteLine();
             myGraph.TS();
             Console.WriteLine();
